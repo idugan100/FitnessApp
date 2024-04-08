@@ -5,23 +5,35 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
     android:orientation="vertical"
-    tools:context=".MainActivity">
-
-
+    tools:context=".SignUp">
     <TextView
         android:layout_width="match_parent"
-        android:textAlignment="center"
         android:layout_height="wrap_content"
-        android:layout_margin="40dp"
-        android:text="@string/app_name"
         android:textSize="60sp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textAlignment="center"
+        android:text="@string/signup_button"
+        />
+    <EditText
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/username_hint"
+        android:layout_margin="10dp"
+        />
+    <EditText
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/password_hint"
+        android:layout_margin="10dp"
+        />
+    <EditText
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/confirm_password_hint"
+        android:layout_margin="10dp"
         />
     <Button
         android:id="@+id/signupButton"
@@ -31,18 +43,5 @@
         android:textSize="30sp"
         android:padding="10dp"
         android:text="@string/signup_button"
-        android:onClick="signUpButtonClick"
         />
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="40dp"
-        android:textSize="30sp"
-        android:padding="10dp"
-        android:text="@string/login_button"
-        android:onClick="loginButtonClick"
-
-        />
-
 </LinearLayout>
