@@ -36,6 +36,7 @@
         android:textSize="20sp"
         android:padding="10dp"
         android:text="@string/login_button"
+        android:onClick="handleLogin"
         />
     <TextView
         android:layout_marginTop="10dp"
