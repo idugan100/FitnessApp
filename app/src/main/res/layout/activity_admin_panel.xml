@@ -7,12 +7,37 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".AdminPanel">
+    <Button
+        android:background="@android:color/black"
+        android:outlineProvider="none"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go Back"
+        android:onClick="backToHome"
+        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textAlignment="center"
         android:textColor="@color/red"
         android:text="admin panel"/>
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/red"
+        android:textSize="40sp"
+        android:text="Send Notification"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/red"
+        android:textSize="40sp"
+        android:text="Group Stats"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/red"
+        android:textSize="40sp"
+        android:text="All Users"/>
 </LinearLayout>
