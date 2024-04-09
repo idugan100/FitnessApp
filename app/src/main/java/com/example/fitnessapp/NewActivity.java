@@ -1,6 +1,8 @@
 package com.example.fitnessapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +22,15 @@ public class NewActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    public void backToHome(View view) {
+        Intent i = new Intent(this, UserHome.class);
+        startActivity(i);
+    }
+
+    public void createActivity(View view) {
+        //send request to the backend to create and activity here
+        this.backToHome(view);
     }
 }

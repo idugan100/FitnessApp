@@ -11,5 +11,23 @@
     <string name="signup_link"><u> New user? Click here to sign up!</u></string>
     <string name="login_link"><u> Have an account? Click here to log in!</u></string>
 
+    <!--    for new activity form-->
+    <string-array name="activity_options">
+        <item>Running</item>
+        <item>Swimming</item>
+        <item>Biking</item>
+        <item>Hiking</item>
+        <item>Boxing</item>
+        <item>Weight Lifting</item>
+        <item>Basketball</item>
+        <item>Tennis</item>
+        <item>Soccer</item>
+    </string-array>
+    <string-array name="intensity_options">
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
+
 
 </resources>

@@ -7,10 +7,41 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".NewActivity">
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:background="@android:color/black"
+        android:outlineProvider="none"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="form for adding an activity"
+        android:text="Go Back"
+        android:onClick="backToHome"
         />
+    <CalendarView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/activity_options"
+        android:layout_margin="10dp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="duration in minutes"
+        android:layout_margin="10dp"
+        />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/intensity_options"
+        android:layout_margin="10dp"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Create"
+        android:onClick="createActivity"/>
 
 </LinearLayout>
