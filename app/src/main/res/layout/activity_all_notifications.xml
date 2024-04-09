@@ -7,9 +7,38 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".AllNotifications">
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:background="@android:color/black"
+        android:outlineProvider="none"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="all of the users notifcations will show here"
+        android:text="Go Back"
+        android:onClick="backToHome"
         />
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <TextView
+                android:text="Message    read/delete "
+                android:textSize="30sp"
+                android:layout_marginVertical="10dp"
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Message    read/delete "
+                android:textSize="30sp"
+                android:layout_marginVertical="10dp"
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Message    read/delete "
+                android:textSize="30sp"
+                android:layout_marginVertical="10dp"
+                />
+        </TableRow>
+
+    </TableLayout>
 </LinearLayout>
