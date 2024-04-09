@@ -32,6 +32,7 @@ public class SignUp extends AppCompatActivity {
     public void handleSignup(View view) {
         //call backend with for values to signup
         //if signed up successfully
+
         Intent i = new Intent(this, UserHome.class);
         startActivity(i);
     }

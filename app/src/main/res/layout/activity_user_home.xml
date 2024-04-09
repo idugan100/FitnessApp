@@ -13,8 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="see notifications"
+        android:onClick="goToAllNotifications"
         />
-
+    
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -61,11 +62,13 @@
             android:layout_height="wrap_content"
             android:text="log new activity +"
             android:layout_marginHorizontal="20sp"
+            android:onClick="goToNewActivity"
             />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="past activity"
+            android:text="past activities"
+            android:onClick="goToAllActivities"
             android:layout_marginHorizontal="20sp"
             />
     </LinearLayout>
