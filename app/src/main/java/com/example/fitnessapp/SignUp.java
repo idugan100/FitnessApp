@@ -12,6 +12,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
+
 public class SignUp extends AppCompatActivity {
 
     @Override
@@ -47,10 +55,40 @@ public class SignUp extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "passwords do not match", Toast.LENGTH_SHORT).show();
             return;
         }
-        //call backend with for values to signup
-        //if signed up successfully
 
-        Intent i = new Intent(this, UserHome.class);
-        startActivity(i);
+        JSONObject body = new JSONObject();
+        try {
+            body.put("username",userName);
+            body.put("password",password);
+        }catch (Exception e){}
+
+        String url = "http://18.226.82.203:8080/signup";
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            Intent i = new Intent(SignUp.this, UserHome.class);
+                            startActivity(i);
+                            //store token in global user object
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(getApplicationContext(), "error signing up - please chose a different username", Toast.LENGTH_SHORT).show();
+                        }
+                    }) {
+                @Override
+                public byte[] getBody() {
+                    // Override this method to send the JSON body
+                    return body.toString().getBytes();
+                }
+                @Override
+                public String getBodyContentType() {
+                    // Specify content type as application/json
+                    return "application/json";
+                }
+            };
+            Volley.newRequestQueue(this).add(stringRequest);
     }
 }
