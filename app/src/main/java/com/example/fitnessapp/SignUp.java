@@ -64,37 +64,12 @@ public class SignUp extends AppCompatActivity {
         try {
             body.put("username",userName);
             body.put("password",password);
-        }catch (Exception e){}
+        }catch (Exception ignored){}
 
         String url = "http://18.226.82.203:8080/signup";
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                    new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            //setup singleton user with token, id, and admin level
-                            User.initialize(response);
-                            Intent i = new Intent(SignUp.this, UserHome.class);
-                            startActivity(i);
 
-                        }
-                    },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(getApplicationContext(), "error signing up - please chose a different username", Toast.LENGTH_SHORT).show();
-                        }
-                    }) {
-                @Override
-                public byte[] getBody() {
-                    // Override this method to send the JSON body
-                    return body.toString().getBytes();
-                }
-                @Override
-                public String getBodyContentType() {
-                    // Specify content type as application/json
-                    return "application/json";
-                }
-            };
-            Volley.newRequestQueue(this).add(stringRequest);
+        StringRequest stringRequest = AuthRequestFactory.createAuthRequest(url,body,this);
+
+        Volley.newRequestQueue(this).add(stringRequest);
     }
 }
