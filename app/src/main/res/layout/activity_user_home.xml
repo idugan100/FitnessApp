@@ -88,6 +88,7 @@
         android:onClick="goToAdminPanel"
         android:textColor="@color/red"
         android:textAlignment="center"
+        android:id="@+id/adminButton"
         />
     <TextView
         android:layout_marginTop="20dp"

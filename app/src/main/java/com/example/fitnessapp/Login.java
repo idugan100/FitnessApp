@@ -61,9 +61,10 @@ public class Login extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+                        //setup singleton user with token, id, and admin level
+                        User.initialize(response);
                         Intent i = new Intent(Login.this, UserHome.class);
                         startActivity(i);
-                        //store token in global user object
                     }
                 },
                 new Response.ErrorListener() {

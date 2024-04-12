@@ -1,5 +1,7 @@
 package com.example.fitnessapp;
 
+import static java.util.Base64.getDecoder;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +21,8 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONObject;
+
+import android.util.Base64;
 
 public class SignUp extends AppCompatActivity {
 
@@ -67,9 +71,11 @@ public class SignUp extends AppCompatActivity {
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
+                            //setup singleton user with token, id, and admin level
+                            User.initialize(response);
                             Intent i = new Intent(SignUp.this, UserHome.class);
                             startActivity(i);
-                            //store token in global user object
+
                         }
                     },
                     new Response.ErrorListener() {
