@@ -1,5 +1,7 @@
 package com.example.fitnessapp;
 
+import static java.util.Base64.getDecoder;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +13,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
+
+import android.util.Base64;
 
 public class SignUp extends AppCompatActivity {
 
@@ -47,10 +59,17 @@ public class SignUp extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "passwords do not match", Toast.LENGTH_SHORT).show();
             return;
         }
-        //call backend with for values to signup
-        //if signed up successfully
 
-        Intent i = new Intent(this, UserHome.class);
-        startActivity(i);
+        JSONObject body = new JSONObject();
+        try {
+            body.put("username",userName);
+            body.put("password",password);
+        }catch (Exception ignored){}
+
+        String url = "http://18.226.82.203:8080/signup";
+
+        StringRequest stringRequest = AuthRequestFactory.createAuthRequest(url,body,this);
+
+        Volley.newRequestQueue(this).add(stringRequest);
     }
 }

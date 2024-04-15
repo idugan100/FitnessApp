@@ -86,7 +86,9 @@
         android:text=" go to admin panel ->"
         android:onClick="goToAdminPanel"
         android:textColor="@color/notificationRed"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:id="@+id/adminButton"
+        />
 
     <TextView
         style="@style/GeneralTextView"
