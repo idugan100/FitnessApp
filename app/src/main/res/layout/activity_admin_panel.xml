@@ -7,37 +7,48 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".AdminPanel">
+
+    <!-- Use AppButton style and modify for 'Go Back' button -->
     <Button
-        android:background="@android:color/black"
-        android:outlineProvider="none"
+        style="@style/AppButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Go Back"
         android:onClick="backToHome"
-        />
+        android:backgroundTint="@color/notificationRed" />
+
+    <!-- Admin Panel Title with GeneralTextView style -->
     <TextView
+        style="@style/GeneralTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="30sp"
         android:textAlignment="center"
-        android:textColor="@color/red"
+        android:textColor="@color/notificationRed"
         android:text="admin panel"/>
+
+    <!-- Buttons with modified AppButton style for admin functionalities -->
     <Button
+        style="@style/AppButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/red"
-        android:textSize="40sp"
+        android:backgroundTint="@color/notificationRed"
+        android:textSize="20sp"
         android:text="Send Notification"/>
+
     <Button
+        style="@style/AppButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/red"
-        android:textSize="40sp"
+        android:backgroundTint="@color/notificationRed"
+        android:textSize="20sp"
         android:text="Group Stats"/>
+
     <Button
+        style="@style/AppButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/red"
-        android:textSize="40sp"
+        android:backgroundTint="@color/notificationRed"
+        android:textSize="20sp"
         android:text="All Users"/>
 </LinearLayout>

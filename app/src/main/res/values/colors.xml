@@ -1,7 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="gray">#CCCCCC</color>
-    <color name="red">#ff0000</color>
+    <color name="colorPrimary">#6200EE</color> <!-- Primary color for light theme -->
+    <color name="colorPrimaryDark">#3700B3</color> <!-- Dark variant of the primary color for light theme -->
+    <color name="colorAccent">#03DAC5</color> <!-- Accent color for light theme -->
+
+    <color name="colorPrimaryDarkBackground">#0f0033</color> <!-- Dark variant of the primary color for light theme -->
+
+    <color name="textColorPrimary">#FFFFFF</color> <!-- Primary text color for light theme -->
+    <color name="textColorSecondary">#000000</color> <!-- Secondary text color for light theme -->
+
+    <color name="backgroundLight">#E0E0E0</color> <!-- Light background color -->
+    <color name="backgroundDark">#121212</color> <!-- Dark background color -->
+
+    <!-- Additional specific UI colors -->
+    <color name="buttonTextColor">#FFFFFF</color> <!-- Button text color -->
+    <color name="statTextColor">#616161</color> <!-- Stat text color -->
+    <color name="generalTextColor">#616161</color> <!-- General text color -->
+    <color name="notificationRed">#D32F2F</color> <!-- Notification color -->
 </resources>
