@@ -31,6 +31,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -40,6 +41,7 @@ public class NewActivity extends AppCompatActivity {
     Spinner activity;
     EditText duration;
     Spinner intensity;
+    Date workoutDate;
 
 
     @Override
@@ -48,6 +50,14 @@ public class NewActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_new);
         cal = findViewById(R.id.calender);
+        cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+                Calendar calendar = Calendar.getInstance();
+                calendar.set(year, month, dayOfMonth);
+                workoutDate = calendar.getTime();
+            }
+        });
         activity = findViewById(R.id.activity);
         duration = findViewById(R.id.duration);
         intensity = findViewById(R.id.intensity);
@@ -64,15 +74,6 @@ public class NewActivity extends AppCompatActivity {
     }
 
     public void createActivity(View view) {
-        //get values from form
-        Date date = new Date(cal.getDate());
-        Log.d("debug",date.toString());
-
-        DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
-        Instant instant = date.toInstant();
-        Log.d("debug",instant.toString());
-
-
         String activityName = activity.getSelectedItem().toString();
         String intensityString = intensity.getSelectedItem().toString();
         int durationValue = Integer.parseInt(duration.getText().toString());
@@ -83,7 +84,7 @@ public class NewActivity extends AppCompatActivity {
             body.put("name",activityName);
             body.put("intensity",intensityString);
             body.put("duration",durationValue);
-            body.put("date",instant.toString());
+            body.put("date",workoutDate.toInstant().toString());
         }catch (Exception error){
             Toast.makeText(getApplicationContext(), "json error:"+ error.getMessage(), Toast.LENGTH_LONG).show();
             return;
