@@ -1,19 +1,41 @@
 <resources>
-    <color name="colorPrimary">#6200EE</color> <!-- Primary color for light theme -->
+    <color name="colorPrimary">#96A731</color> <!-- Primary color for light theme -->
     <color name="colorPrimaryDark">#3700B3</color> <!-- Dark variant of the primary color for light theme -->
-    <color name="colorAccent">#03DAC5</color> <!-- Accent color for light theme -->
+    <color name="colorAccent">#FBC05E</color> <!-- Accent color for light theme -->
 
-    <color name="colorPrimaryDarkBackground">#0f0033</color> <!-- Dark variant of the primary color for light theme -->
+    <color name="colorPrimaryDarkBackground">#96A731</color> <!-- Dark variant of the primary color for light theme -->
 
     <color name="textColorPrimary">#FFFFFF</color> <!-- Primary text color for light theme -->
     <color name="textColorSecondary">#000000</color> <!-- Secondary text color for light theme -->
 
-    <color name="backgroundLight">#E0E0E0</color> <!-- Light background color -->
-    <color name="backgroundDark">#121212</color> <!-- Dark background color -->
+    <color name="backgroundLight">#80ddf2</color> <!-- Light background color -->
+    <color name="backgroundDark">#80ddf2</color> <!-- Dark background color -->
 
     <!-- Additional specific UI colors -->
     <color name="buttonTextColor">#FFFFFF</color> <!-- Button text color -->
     <color name="statTextColor">#616161</color> <!-- Stat text color -->
     <color name="generalTextColor">#616161</color> <!-- General text color -->
-    <color name="notificationRed">#D32F2F</color> <!-- Notification color -->
+    <color name="notificationRed">#D94C6A</color>
+    <color name="MainBackground">#C2CAD0</color> <!-- Notification color -->
 </resources>
+
+
+    <!--<resources>-->
+<!--    <color name="colorPrimary">#6200EE</color> &lt;!&ndash; Primary color for light theme &ndash;&gt;-->
+<!--    <color name="colorPrimaryDark">#3700B3</color> &lt;!&ndash; Dark variant of the primary color for light theme &ndash;&gt;-->
+<!--    <color name="colorAccent">#03DAC5</color> &lt;!&ndash; Accent color for light theme &ndash;&gt;-->
+
+<!--    <color name="colorPrimaryDarkBackground">#0f0033</color> &lt;!&ndash; Dark variant of the primary color for light theme &ndash;&gt;-->
+
+<!--    <color name="textColorPrimary">#FFFFFF</color> &lt;!&ndash; Primary text color for light theme &ndash;&gt;-->
+<!--    <color name="textColorSecondary">#000000</color> &lt;!&ndash; Secondary text color for light theme &ndash;&gt;-->
+
+<!--    <color name="backgroundLight">#E0E0E0</color> &lt;!&ndash; Light background color &ndash;&gt;-->
+<!--    <color name="backgroundDark">#121212</color> &lt;!&ndash; Dark background color &ndash;&gt;-->
+
+<!--    &lt;!&ndash; Additional specific UI colors &ndash;&gt;-->
+<!--    <color name="buttonTextColor">#FFFFFF</color> &lt;!&ndash; Button text color &ndash;&gt;-->
+<!--    <color name="statTextColor">#616161</color> &lt;!&ndash; Stat text color &ndash;&gt;-->
+<!--    <color name="generalTextColor">#616161</color> &lt;!&ndash; General text color &ndash;&gt;-->
+<!--    <color name="notificationRed">#D32F2F</color> &lt;!&ndash; Notification color &ndash;&gt;-->
+<!--</resources>-->
