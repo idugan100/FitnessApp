@@ -5,140 +5,100 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/MainBackground"
-    android:backgroundTint="#1A0A35"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="@color/colorPrimaryDarkBackground"
     tools:context=".UserHome">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <Button
+        style="@style/AppButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="see notifications"
+        android:onClick="goToAllNotifications" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/stat_height"
+        android:layout_marginTop="20dp"
+        android:background="@color/backgroundLight">
+
+        <TextView
+            style="@style/StatsText"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="stat 1" />
+        <TextView
+            style="@style/StatsText"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="stat 2" />
+        <TextView
+            style="@style/StatsText"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="stat 3" />
+        <TextView
+            style="@style/StatsText"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="stat 4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="1189dp">
-
-        <TextView
-            android:id="@+id/adminButton"
-            style="@style/GeneralTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="goToAdminPanel"
-            android:text=" go to admin panel ->"
-            android:textAlignment="center"
-            android:textColor="@color/notificationRed"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="1138dp" />
-
-        <CalendarView
-            android:layout_width="466dp"
-            android:layout_height="368dp"
-            android:background="@color/backgroundLight"
-            tools:layout_editor_absoluteX="57dp"
-            tools:layout_editor_absoluteY="738dp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/homeLogAct"
-            android:layout_width="284dp"
-            android:layout_height="197dp"
-            android:onClick="goToNewActivity"
-            android:text="log new activity +"
-            tools:layout_editor_absoluteX="28dp"
-            tools:layout_editor_absoluteY="496dp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/homeGoToActs"
-            style="@style/ThemeOverlay.Material3.Button.ElevatedButton"
-            android:layout_width="150dp"
-            android:layout_height="75dp"
-            android:background="@color/material_dynamic_primary95"
-            android:onClick="goToAllActivities"
-            android:text="past activities"
-            android:visibility="visible"
-            app:backgroundTint="@color/material_dynamic_tertiary80"
-            app:iconTint="@color/material_dynamic_neutral80"
-            app:rippleColor="@color/material_dynamic_neutral30"
-            tools:layout_editor_absoluteX="341dp"
-            tools:layout_editor_absoluteY="519dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/stat_height"
-            android:background="@color/backgroundLight"
-            android:orientation="horizontal"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="360dp">
-
-            <TextView
-                style="@style/StatsText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="stat 1" />
-
-            <TextView
-                style="@style/StatsText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="stat 2" />
-
-            <TextView
-                style="@style/StatsText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="stat 3" />
-
-            <TextView
-                style="@style/StatsText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="stat 4" />
-
-        </LinearLayout>
-
         <Button
-            android:id="@+id/button"
             style="@style/AppButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="goToAllNotifications"
-            android:text="see notifications"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="262dp" />
+            android:text="log new activity +"
+            android:onClick="goToNewActivity" />
+        <Button
+            style="@style/AppButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="past activities"
+            android:onClick="goToAllActivities" />
+    </LinearLayout>
 
-        <TextView
-            android:layout_width="583dp"
-            android:layout_height="270dp"
-            android:layout_marginBottom="12dp"
-            android:background="#FF4081"
-            android:padding="10dp"
-            android:text="Banner"
-            android:textAlignment="center"
-            android:textColor="@color/textColorPrimary"
-            android:textSize="60sp"
-            app:layout_constraintBottom_toTopOf="@+id/button"
-            tools:layout_editor_absoluteX="0dp" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <CalendarView
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@color/backgroundLight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <TextView
+        style="@style/GeneralTextView"
         android:layout_width="match_parent"
-        android:layout_height="96dp"
-        android:background="#FF4081"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:padding="10dp"
-        android:shadowDx="@dimen/cardview_default_elevation"
-        android:text="Bottom Nav Here"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text=" go to admin panel ->"
+        android:onClick="goToAdminPanel"
+        android:textColor="@color/notificationRed"
         android:textAlignment="center"
-        android:textColor="@color/textColorPrimary"
-        android:textSize="60sp" />
+        android:id="@+id/adminButton"
+        />
 
+    <TextView
+        style="@style/GeneralTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="60sp"
+        android:textColor="@color/textColorPrimary"
+        android:background="@color/colorPrimaryDark"
+        android:textAlignment="center"
+        android:padding="10dp" />
 </LinearLayout>
 
