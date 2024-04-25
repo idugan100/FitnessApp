@@ -28,4 +28,10 @@ public class AdminPanel extends AppCompatActivity {
         Intent i = new Intent(this, UserHome.class);
         startActivity(i);
     }
+
+    public void toCreateNotification (View view) {
+        Intent i = new Intent (this, CreateNotification.class);
+        startActivity(i);
+    }
+
 }
