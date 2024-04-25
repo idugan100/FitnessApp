@@ -84,7 +84,7 @@ public class NewActivity extends AppCompatActivity {
             body.put("name",activityName);
             body.put("intensity",intensityString);
             body.put("duration",durationValue);
-            body.put("date",workoutDate.toString());
+            body.put("date",workoutDate.toInstant().toString());
         }catch (Exception error){
             Toast.makeText(getApplicationContext(), "json error:"+ error.getMessage(), Toast.LENGTH_LONG).show();
             return;
