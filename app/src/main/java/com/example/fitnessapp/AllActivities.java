@@ -99,18 +99,22 @@ public class AllActivities extends AppCompatActivity {
             TextView date = new TextView(this);
             date.setText(all.get(i).day.split("T")[0]);
             date.setTextSize(15);
+            setTextViewMargins(date);
 
             TextView activity = new TextView(this);
             activity.setText(all.get(i).name);
             activity.setTextSize(15);
+            setTextViewMargins(activity);
 
             TextView duration = new TextView(this);
             duration.setText(String.valueOf(all.get(i).duration));
             duration.setTextSize(15);
+            setTextViewMargins(duration);
 
             TextView intensity = new TextView(this);
             intensity.setText(all.get(i).intensity);
             intensity.setTextSize(15);
+            setTextViewMargins(intensity);
 
             row.addView(date);
             row.addView(activity);
@@ -118,5 +122,13 @@ public class AllActivities extends AppCompatActivity {
             row.addView(intensity);
             t.addView(row);
         }
+    }
+    private void setTextViewMargins(TextView textView) {
+        TableRow.LayoutParams params = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
+        int marginInDp = 7; // Margin in dp
+        float scale = getResources().getDisplayMetrics().density;
+        int marginInPx = (int) (marginInDp * scale + 0.5f); // Convert dp to pixels
+        params.setMargins(marginInPx, marginInPx, marginInPx, marginInPx);
+        textView.setLayoutParams(params);
     }
 }

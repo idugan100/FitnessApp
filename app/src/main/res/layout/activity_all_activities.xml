@@ -15,6 +15,9 @@
         android:text="Go Back"
         android:onClick="backToHome"
         />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,27 +25,28 @@
         <TableRow>
             <TextView
                 android:text="Date"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:layout_margin="10dp"
                 />
             <TextView
                 android:text="Activity"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:layout_margin="10dp"
                 />
             <TextView
                 android:text="Intensity"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:layout_margin="10dp"
                 />
             <TextView
                 android:text="Duration"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:layout_margin="10dp"
                 />
         </TableRow>
 
     </TableLayout>
+    </ScrollView>
 
 
 </LinearLayout>
