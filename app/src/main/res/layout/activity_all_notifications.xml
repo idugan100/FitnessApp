@@ -16,26 +16,32 @@
         android:onClick="backToHome"
         />
     <TableLayout
+        android:id="@+id/table"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TableRow>
             <TextView
-                android:text="Message    read/delete "
-                android:textSize="30sp"
+                android:text="Message"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
                 android:layout_marginVertical="10dp"
                 />
-        </TableRow>
-        <TableRow>
             <TextView
-                android:text="Message    read/delete "
-                android:textSize="30sp"
+                android:text="Status"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
                 android:layout_marginVertical="10dp"
                 />
-        </TableRow>
-        <TableRow>
             <TextView
-                android:text="Message    read/delete "
-                android:textSize="30sp"
+                android:text="Read"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
+                android:layout_marginVertical="10dp"
+                />
+            <TextView
+                android:text="Delete"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
                 android:layout_marginVertical="10dp"
                 />
         </TableRow>
