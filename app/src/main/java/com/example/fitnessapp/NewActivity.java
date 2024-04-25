@@ -41,7 +41,7 @@ public class NewActivity extends AppCompatActivity {
     Spinner activity;
     EditText duration;
     Spinner intensity;
-    Date workoutDate;
+    Date workoutDate= new Date();
 
 
     @Override
@@ -84,7 +84,7 @@ public class NewActivity extends AppCompatActivity {
             body.put("name",activityName);
             body.put("intensity",intensityString);
             body.put("duration",durationValue);
-            body.put("date",workoutDate.toInstant().toString());
+            body.put("date",workoutDate.toString());
         }catch (Exception error){
             Toast.makeText(getApplicationContext(), "json error:"+ error.getMessage(), Toast.LENGTH_LONG).show();
             return;

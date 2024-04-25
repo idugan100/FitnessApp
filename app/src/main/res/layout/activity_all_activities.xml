@@ -17,26 +17,28 @@
         />
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/activityTable">
         <TableRow>
             <TextView
-                android:text="Date Activity Intensity Duration "
-                android:textSize="30sp"
-                android:layout_marginVertical="10dp"
+                android:text="Date"
+                android:textSize="25sp"
+                android:layout_margin="10dp"
                 />
-        </TableRow>
-        <TableRow>
             <TextView
-                android:text="Date Activity Intensity Duration "
-                android:textSize="30sp"
-                android:layout_marginVertical="10dp"
+                android:text="Activity"
+                android:textSize="25sp"
+                android:layout_margin="10dp"
                 />
-        </TableRow>
-        <TableRow>
             <TextView
-                android:text="Date Activity Intensity Duration "
-                android:textSize="30sp"
-                android:layout_marginVertical="10dp"
+                android:text="Intensity"
+                android:textSize="25sp"
+                android:layout_margin="10dp"
+                />
+            <TextView
+                android:text="Duration"
+                android:textSize="25sp"
+                android:layout_margin="10dp"
                 />
         </TableRow>
 
