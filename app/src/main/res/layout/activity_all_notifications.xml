@@ -27,19 +27,7 @@
                 android:layout_marginVertical="10dp"
                 />
             <TextView
-                android:text="Status"
-                android:textSize="20sp"
-                android:layout_margin="10dp"
-                android:layout_marginVertical="10dp"
-                />
-            <TextView
-                android:text="Read"
-                android:textSize="20sp"
-                android:layout_margin="10dp"
-                android:layout_marginVertical="10dp"
-                />
-            <TextView
-                android:text="Delete"
+                android:text="Action"
                 android:textSize="20sp"
                 android:layout_margin="10dp"
                 android:layout_marginVertical="10dp"

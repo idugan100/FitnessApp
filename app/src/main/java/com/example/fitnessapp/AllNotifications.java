@@ -1,6 +1,9 @@
 package com.example.fitnessapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,6 +11,7 @@ import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,9 +20,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
@@ -95,26 +101,33 @@ public class AllNotifications extends AppCompatActivity {
             message.setText(notificationList.get(i).message);
             message.setTextSize(15);
             setTextViewMargins(message);
+            Button action = new Button(this);
 
-            TextView isRead = new TextView(this);
+
             if(notificationList.get(i).read){
-                isRead.setText("read");
+                action.setText("delete");
+                int finalI1 = i;
+                action.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        delete(notificationList.get(finalI1).id);
+                    }
+                });
             }else{
-                isRead.setText("unread");
+                message.setTextColor(Color.BLUE);
+                action.setText("read");
+                int finalI = i;
+                action.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        read(notificationList.get(finalI).id);
+                    }
+                });
             }
-            isRead.setTextSize(15);
-            setTextViewMargins(isRead);
 
             row.addView(message);
-            row.addView(isRead);
 
-            Button read = new Button(this);
-            read.setText("r");
-            Button delete = new Button(this);
-            delete.setText("d");
-
-            row.addView(read);
-            row.addView(delete);
+            row.addView(action);
 
             t.addView(row);
         }
@@ -126,6 +139,58 @@ public class AllNotifications extends AppCompatActivity {
         int marginInPx = (int) (marginInDp * scale + 0.5f); // Convert dp to pixels
         params.setMargins(marginInPx, 0, marginInPx, 0);
         textView.setLayoutParams(params);
+    }
+
+    private void delete(int id){
+        String url = "http://18.226.82.203:8080/notifications/delete/"+User.getInstance().getId()+"/"+id;
+       StringRequest s = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        recreate();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(), " error, please try again", Toast.LENGTH_SHORT).show();
+                    }
+                }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Authorization", "Bearer " + User.getInstance().getToken());
+                return params;
+            }
+        };
+        Volley.newRequestQueue(this).add(s);
+    }
+
+    private void read(int id){
+
+        String url = "http://18.226.82.203:8080/notifications/read/"+User.getInstance().getId()+"/"+id;
+        StringRequest s = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        recreate();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(), " error, please try again", Toast.LENGTH_SHORT).show();
+                    }
+                }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Authorization", "Bearer " + User.getInstance().getToken());
+                return params;
+            }
+        };
+        Volley.newRequestQueue(this).add(s);
+
     }
 
 }
