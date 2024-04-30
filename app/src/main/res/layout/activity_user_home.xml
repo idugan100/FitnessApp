@@ -12,41 +12,44 @@
 
     <Button
         style="@style/AppButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="see notifications"
-        android:onClick="goToAllNotifications" />
+        android:layout_width="wrap_content"
+        android:layout_height="79dp"
+        android:onClick="goToAllNotifications"
+        android:text="see notifications" />
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="@dimen/stat_height"
         android:layout_marginTop="20dp"
-        android:background="@color/backgroundLight">
+        android:background="@color/backgroundLight"
+        android:orientation="horizontal">
 
         <TextView
             style="@style/StatsText"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="stat 1" />
+
         <TextView
             style="@style/StatsText"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="stat 2" />
+
         <TextView
             style="@style/StatsText"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="stat 3" />
+
         <TextView
             style="@style/StatsText"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="stat 4" />
     </LinearLayout>
 
@@ -60,8 +63,9 @@
             style="@style/AppButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="log new activity +"
-            android:onClick="goToNewActivity" />
+            android:onClick="goToNewActivity"
+            android:text="log new activity +" />
+
         <Button
             style="@style/AppButton"
             android:layout_width="wrap_content"
@@ -71,12 +75,12 @@
     </LinearLayout>
 
     <CalendarView
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:background="@color/backgroundLight"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="300dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="50dp"
+        android:background="@color/backgroundLight" />
 
     <TextView
         style="@style/GeneralTextView"
