@@ -7,7 +7,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".CreateNotification">
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GO BACK"
+        style="@style/AppButton"
+        android:backgroundTint="@color/notificationRed"
+        android:onClick="backToAdmin"
+        />
     <EditText
         android:id="@+id/notifBody"
         android:layout_width="match_parent"

@@ -88,4 +88,9 @@ public class CreateNotification extends AppCompatActivity {
 
 
     }
+
+    public void backToAdmin(View view) {
+        Intent i = new Intent(this, AdminPanel.class);
+        startActivity(i);
+    }
 }
