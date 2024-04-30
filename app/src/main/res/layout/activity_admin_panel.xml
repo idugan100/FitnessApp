@@ -34,7 +34,8 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/notificationRed"
         android:textSize="20sp"
-        android:text="Send Notification"/>
+        android:text="Manage Notifications"
+        android:onClick="toCreateNotification"/>
 
     <Button
         style="@style/AppButton"

@@ -10,6 +10,7 @@
     <string name="confirm_password_hint">confirm password</string>
     <string name="signup_link"><u> New user? Click here to sign up!</u></string>
     <string name="login_link"><u> Have an account? Click here to log in!</u></string>
+    <string name="notif_hint"><u>Enter a new notification</u></string>
 
     <!--    for new activity form-->
     <string-array name="activity_options">
