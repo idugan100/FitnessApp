@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".AllUsers"
+            android:exported="false" />
+        <activity
             android:name=".CreateNotification"
             android:exported="false" />
         <activity

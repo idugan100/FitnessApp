@@ -51,5 +51,6 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/notificationRed"
         android:textSize="20sp"
-        android:text="All Users"/>
+        android:text="All Users"
+        android:onClick="toAllUsers"/>
 </LinearLayout>
