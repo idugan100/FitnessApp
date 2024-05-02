@@ -1,5 +1,9 @@
 package com.example.fitnessapp;
 
+import static com.google.android.material.internal.ContextUtils.getActivity;
+
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -11,6 +15,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -98,7 +103,25 @@ public class AllUsers extends AppCompatActivity {
             name.setTextSize(20);
             setTextViewMargins(name);
 
+            Button b = new Button(this);
+
+            Context c = this;
+            int finalI = i;
+            b.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                     new AlertDialog.Builder(c)
+                            .setTitle("Stats for " + users.get(finalI).username)
+                            .setMessage("First Workout: 2023-01-01\nMost Recent Workout: 2024-05-01\nTotal Days Exercised: 100\nTotal Minutes Exercised: 350\n")
+                            .setPositiveButton(android.R.string.yes, null)
+                             .show();
+                }
+            });
+
+            b.setText("->");
+
             row.addView(name);
+            row.addView(b);
 
             t.addView(row);
         }
