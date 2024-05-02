@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,14 +18,11 @@ import com.android.volley.AuthFailureError;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -54,7 +50,7 @@ public class AllActivities extends AppCompatActivity {
     }
 
     private void loadUserActivities(){
-        String url ="http://18.226.82.203:8080/activities/"+User.getInstance().getId();
+        String url ="http://18.226.82.203:8080/activities/"+ AppUser.getInstance().getId();
         JsonArrayRequest j = new JsonArrayRequest(url,
                 new Response.Listener<JSONArray>() {
                     @Override
@@ -85,7 +81,7 @@ public class AllActivities extends AppCompatActivity {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String>  params = new HashMap<String, String>();
-                params.put("Authorization", "Bearer "+ User.getInstance().getToken());
+                params.put("Authorization", "Bearer "+ AppUser.getInstance().getToken());
                 return params;
             }
         };

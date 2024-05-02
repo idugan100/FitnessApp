@@ -3,7 +3,6 @@ package com.example.fitnessapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -22,7 +21,7 @@ public class UserHome extends AppCompatActivity {
         TextView admin = findViewById(R.id.adminButton); // Assuming your button has id "admin_button" in your XML layout file
 
         //show admin link only if user is an admin
-        if (User.getInstance().isAdmin()) {
+        if (AppUser.getInstance().isAdmin()) {
             admin.setVisibility(View.VISIBLE); // If user is admin, show the button
         } else {
             admin.setVisibility(View.GONE); // If user is not admin, hide the button

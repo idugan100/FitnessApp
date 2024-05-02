@@ -1,6 +1,5 @@
 package com.example.fitnessapp;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +15,6 @@ import androidx.core.view.WindowInsetsCompat;
 import org.json.JSONObject;
 
 import com.android.volley.AuthFailureError;
-import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -77,7 +75,7 @@ public class CreateNotification extends AppCompatActivity {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String>  params = new HashMap<String, String>();
-                params.put("Authorization", "Bearer "+ User.getInstance().getToken());
+                params.put("Authorization", "Bearer "+ AppUser.getInstance().getToken());
                 return params;
             }
             public byte[] getBody() {

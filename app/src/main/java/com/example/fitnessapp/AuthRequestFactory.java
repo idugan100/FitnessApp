@@ -19,7 +19,7 @@ public class AuthRequestFactory {
                     @Override
                     public void onResponse(String response) {
                         //setup singleton user with token, id, and admin level
-                        User.initialize(response);
+                        AppUser.initialize(response);
                         Intent i = new Intent(c, UserHome.class);
                         c.startActivity(i);
 

@@ -1,8 +1,6 @@
 package com.example.fitnessapp;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -56,7 +54,7 @@ public class AllNotifications extends AppCompatActivity {
     }
 
     private void loadUserNotifications(){
-        String url ="http://18.226.82.203:8080/notifications/"+User.getInstance().getId();
+        String url ="http://18.226.82.203:8080/notifications/"+ AppUser.getInstance().getId();
         JsonArrayRequest j = new JsonArrayRequest(url,
                 new Response.Listener<JSONArray>() {
                     @Override
@@ -85,7 +83,7 @@ public class AllNotifications extends AppCompatActivity {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String>  params = new HashMap<String, String>();
-                params.put("Authorization", "Bearer "+ User.getInstance().getToken());
+                params.put("Authorization", "Bearer "+ AppUser.getInstance().getToken());
                 return params;
             }
         };
@@ -142,7 +140,7 @@ public class AllNotifications extends AppCompatActivity {
     }
 
     private void delete(int id){
-        String url = "http://18.226.82.203:8080/notifications/delete/"+User.getInstance().getId()+"/"+id;
+        String url = "http://18.226.82.203:8080/notifications/delete/"+ AppUser.getInstance().getId()+"/"+id;
        StringRequest s = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
@@ -159,7 +157,7 @@ public class AllNotifications extends AppCompatActivity {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("Authorization", "Bearer " + User.getInstance().getToken());
+                params.put("Authorization", "Bearer " + AppUser.getInstance().getToken());
                 return params;
             }
         };
@@ -168,7 +166,7 @@ public class AllNotifications extends AppCompatActivity {
 
     private void read(int id){
 
-        String url = "http://18.226.82.203:8080/notifications/read/"+User.getInstance().getId()+"/"+id;
+        String url = "http://18.226.82.203:8080/notifications/read/"+ AppUser.getInstance().getId()+"/"+id;
         StringRequest s = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
@@ -185,7 +183,7 @@ public class AllNotifications extends AppCompatActivity {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("Authorization", "Bearer " + User.getInstance().getToken());
+                params.put("Authorization", "Bearer " + AppUser.getInstance().getToken());
                 return params;
             }
         };

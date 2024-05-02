@@ -3,7 +3,6 @@ package com.example.fitnessapp;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.CalendarView;
 import android.widget.EditText;
@@ -20,17 +19,11 @@ import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONObject;
 
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -91,7 +84,7 @@ public class NewActivity extends AppCompatActivity {
         }
 
         //pass json and token to a request factory
-        String url = "http://18.226.82.203:8080/activities/"+User.getInstance().getId();
+        String url = "http://18.226.82.203:8080/activities/"+ AppUser.getInstance().getId();
         Context c = this;
 
         //send request
@@ -114,7 +107,7 @@ public class NewActivity extends AppCompatActivity {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String>  params = new HashMap<String, String>();
-                params.put("Authorization", "Bearer "+ User.getInstance().getToken());
+                params.put("Authorization", "Bearer "+ AppUser.getInstance().getToken());
                 return params;
             }
             public byte[] getBody() {
