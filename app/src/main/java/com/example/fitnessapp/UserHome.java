@@ -36,11 +36,12 @@ public class UserHome extends AppCompatActivity {
             return insets;
         });
 
-        GridView heatmapGridView = findViewById(R.id.heatmapGridView);
-        heatmapGridView.setAdapter(new HeatmapAdapter(this));
-
     }
 
+    public void goToHeatMap(View view) {
+        Intent i = new Intent(this, HeatMapActivity.class);
+        startActivity(i);
+    }
     public void goToNewActivity(View view) {
         Intent i = new Intent(this, NewActivity.class);
         startActivity(i);
