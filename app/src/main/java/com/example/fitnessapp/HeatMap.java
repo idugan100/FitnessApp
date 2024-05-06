@@ -32,8 +32,8 @@ import java.util.List;
 
 public class HeatMap {
     DateIntensity [][] grid;
-    private static final int ROWS = 7;
-    private static final int COLS = 4;
+    private static final int ROWS = 4;
+    private static final int COLS = 7;
 
     ArrayList<LocalDate> dates = new ArrayList<>();
 

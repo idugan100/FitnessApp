@@ -12,65 +12,69 @@
 
     <Button
         style="@style/AppButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="see notifications"
-        android:onClick="goToAllNotifications" />
+        android:layout_width="368dp"
+        android:layout_height="87dp"
+        android:onClick="goToAllNotifications"
+        android:text="see notifications" />
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/stat_height"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@color/backgroundLight">
+        android:orientation="horizontal">
+
+        <Button
+            style="@style/AppButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="goToNewActivity"
+            android:text="log new activity +" />
+
+        <Button
+            style="@style/AppButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="goToAllActivities"
+            android:text="past activities" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="411dp"
+        android:layout_height="178dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/backgroundLight"
+        android:orientation="horizontal">
 
         <TextView
             style="@style/StatsText"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="stat 1" />
+
         <TextView
             style="@style/StatsText"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="stat 2" />
+
         <TextView
             style="@style/StatsText"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="stat 3" />
+
         <TextView
             style="@style/StatsText"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="stat 4" />
     </LinearLayout>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
-
-        <Button
-            style="@style/AppButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="log new activity +"
-            android:onClick="goToNewActivity" />
-        <Button
-            style="@style/AppButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="past activities"
-            android:onClick="goToAllActivities" />
-    </LinearLayout>
-
-<!--    <CalendarView-->
+    <!--    <CalendarView-->
 <!--        android:layout_marginTop="10dp"-->
 <!--        android:layout_marginLeft="50dp"-->
 <!--        android:layout_marginRight="50dp"-->
@@ -80,12 +84,12 @@
 
     <FrameLayout
         android:id="@+id/heatmap_container"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
+        android:layout_width="391dp"
+        android:layout_height="224dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="0dp"
-        android:background="@color/backgroundLight" />
+        android:background="@color/colorPrimaryDarkBackground" />
 
     <TextView
         style="@style/GeneralTextView"
@@ -101,13 +105,14 @@
 
     <TextView
         style="@style/GeneralTextView"
-        android:layout_width="match_parent"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="60sp"
-        android:textColor="@color/textColorPrimary"
         android:background="@color/colorPrimaryDark"
+        android:padding="10dp"
+        android:text="@string/app_name"
         android:textAlignment="center"
-        android:padding="10dp" />
+        android:textColor="@color/textColorPrimary"
+        android:textSize="60sp" />
+
 </LinearLayout>
 
