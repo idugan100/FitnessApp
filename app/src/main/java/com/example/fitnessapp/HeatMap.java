@@ -5,31 +5,6 @@ import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
 
-//public class HeatMap {
-//    private List<DateIntensity> heatmapData = new ArrayList<>();
-//    private static final int DAYS = 28; // Assuming a month view
-//
-//    public HeatMap() {
-//        initializeHeatMap();
-//    }
-//
-//    private void initializeHeatMap() {
-//        LocalDate startDate = LocalDate.of(2024, 3, 1);
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
-//        Random rand = new Random();
-//
-//        for (int i = 0; i < DAYS; i++) {
-//            LocalDate date = startDate.plusDays(i);
-//            Intensity intensity = Intensity.values()[rand.nextInt(Intensity.values().length)];
-//            heatmapData.add(new DateIntensity(date.format(formatter), intensity));
-//        }
-//    }
-//
-//    public List<DateIntensity> getHeatmapData() {
-//        return heatmapData;
-//    }
-//}
-
 public class HeatMap {
     DateIntensity [][] grid;
     private static final int ROWS = 4;
