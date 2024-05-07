@@ -43,7 +43,8 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/notificationRed"
         android:textSize="20sp"
-        android:text="Group Stats"/>
+        android:text="Group Stats"
+        android:onClick="goToGroupStats"/>
 
     <Button
         style="@style/AppButton"
