@@ -17,6 +17,30 @@ public class UserStats {
                 "First Workout: "+ first+
                         "\nMost Recent Workout: "+last+
                         "\nTotal Days Exercised: "+totalDays+
-                        "\nTotal Minutes Exercised: "+totalMinutes;
+                        "\nTotal Minutes Exercised: "+totalMinutes+
+                        "\n Percentage High Intensity: "+String.format("%.1f", pctHigh())+ "%" +
+                        "\n Percentage Medium Intensity: "+String.format("%.1f", pctMed())+"%" +
+                        "\n Percentage Low Intensity: "+String.format("%.1f", pctLow())+"%" ;
+    }
+
+    double pctHigh(){
+        double high = totalHighMinutes;
+        double medium = totalMediumMinutes;
+        double low = totalLowMinutes;
+        return (high/(high+low+medium+.001))*100.0;
+    }
+
+    double pctMed(){
+        double high = totalHighMinutes;
+        double medium = totalMediumMinutes;
+        double low = totalLowMinutes;
+        return (medium/(high+low+medium+.001))*100.0;
+    }
+
+    double pctLow(){
+        double high = totalHighMinutes;
+        double medium = totalMediumMinutes;
+        double low = totalLowMinutes;
+        return (low/(high+low+medium+.001))*100.0;
     }
 }
