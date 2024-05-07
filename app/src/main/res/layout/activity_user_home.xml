@@ -74,20 +74,12 @@
             android:text="stat 4" />
     </LinearLayout>
 
-    <!--    <CalendarView-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:layout_marginLeft="50dp"-->
-<!--        android:layout_marginRight="50dp"-->
-<!--        android:background="@color/backgroundLight"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content" />-->
-
     <FrameLayout
         android:id="@+id/heatmap_container"
-        android:layout_width="391dp"
-        android:layout_height="224dp"
+        android:layout_width="390dp"
+        android:layout_height="242dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         android:layout_marginRight="0dp"
         android:background="@color/colorPrimaryDarkBackground" />
 

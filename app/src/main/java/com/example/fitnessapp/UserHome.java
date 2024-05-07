@@ -45,11 +45,6 @@ public class UserHome extends AppCompatActivity {
         }
     }
 
-    public void goToHeatMap(View view) {
-        Intent i = new Intent(this, HeatMapActivity.class);
-        startActivity(i);
-    }
-
     public void goToNewActivity(View view) {
         Intent i = new Intent(this, NewActivity.class);
         startActivity(i);
