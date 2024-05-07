@@ -1,0 +1,59 @@
+package com.example.fitnessapp;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
+
+public class HeatMap {
+    DateIntensity [][] grid;
+    private static final int ROWS = 4;
+    private static final int COLS = 7;
+
+    ArrayList<LocalDate> dates = new ArrayList<>();
+
+    public HeatMap () {
+        this.grid = new DateIntensity[ROWS][COLS];
+        this.addDates();
+        this.initializeHeatMap();
+    }
+
+    public void addDates() {
+        LocalDate startDate = LocalDate.of(2024, 3, 1);
+        for (int i = 0; i < 28; i++) {
+            dates.add(startDate.plusDays(i));
+        }
+    }
+
+    public void initializeHeatMap () {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+        Random rand = new Random();
+
+        int index = 0; // Initialize an index for the dates ArrayList
+        for (int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < COLS; j++) {
+                LocalDate date = dates.get(index); // Use the index to get the date
+                Intensity intensity = Intensity.values()[rand.nextInt(Intensity.values().length)];
+                grid[i][j] = new DateIntensity(date.format(formatter), intensity);
+                index++; // Increment the index for the next date
+            }
+        }
+    }
+
+    public DateIntensity[][] getGrid () {
+        return grid;
+    }
+
+    public void displayHeatMap () {
+        for (int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < COLS; j++) {
+                System.out.println("Element [" + i + "][" + j + "]: " + grid[i][j]);
+            }
+        }
+    }
+
+    public static void main (String [] args) {
+        HeatMap heatMap = new HeatMap();
+        heatMap.displayHeatMap();
+    }
+}
