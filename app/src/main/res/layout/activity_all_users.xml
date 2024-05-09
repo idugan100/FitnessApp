@@ -22,7 +22,8 @@
     <TableLayout
         android:id="@+id/table"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="80dp">
         <TableRow>
             <TextView
                 android:text="User name"
