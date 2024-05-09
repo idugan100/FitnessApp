@@ -39,4 +39,8 @@ public class AdminPanel extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void goToGroupStats(View view) {
+        Intent i = new Intent(this, GroupStats.class);
+        startActivity(i);
+    }
 }
