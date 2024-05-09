@@ -18,6 +18,7 @@
     <color name="notificationRed">#D32F2F</color> <!-- Notification color -->
 
     <!-- HEATMAP -->
+    <color name="colorNone">#ffffff</color>
     <color name="colorLow">#a5d6a7</color>
     <color name="colorModerate">#81c784</color>
     <color name="colorHigh">#4caf50</color>
