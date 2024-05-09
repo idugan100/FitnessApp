@@ -1,46 +1,33 @@
 package com.example.fitnessapp;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.FragmentTransaction;
 
-public class AdminPanel extends AppCompatActivity {
+public class GroupStatsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_admin_panel);
+        setContentView(R.layout.activity_group_stats);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-    }
 
-    public void backToHome(View view) {
-        Intent i = new Intent(this, UserHome.class);
-        startActivity(i);
-    }
-
-    public void toCreateNotification (View view) {
-        Intent i = new Intent (this, CreateNotification.class);
-        startActivity(i);
-    }
-
-    public void toAllUsers(View view){
-        Intent i = new Intent(this, AllUsers.class);
-        startActivity(i);
-    }
-    
-    public void goToGroupStats(View view) {
-        Intent i = new Intent(this, GroupStatsActivity.class);
-        startActivity(i);
+        if (savedInstanceState == null) {
+            boolean isGroup = true;
+            HeatMapFragment heatMapFragment = HeatMapFragment.newInstance(isGroup);
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.heatmap_container, heatMapFragment);
+            transaction.commit();
+        }
     }
 }
