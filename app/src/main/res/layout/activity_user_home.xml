@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="goToNewActivity"
-            android:text="log new activity +" />
+            android:text="new activity +" />
 
         <Button
             style="@style/AppButton"
@@ -103,8 +103,7 @@
         android:padding="10dp"
         android:text="@string/app_name"
         android:textAlignment="center"
-        android:textColor="@color/textColorPrimary"
-        android:textSize="60sp" />
+        android:textColor="@color/textColorPrimary"/>
 
 </LinearLayout>
 
