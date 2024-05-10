@@ -38,7 +38,8 @@ public class UserHome extends AppCompatActivity {
         });
 
         if (savedInstanceState == null) {
-            HeatMapFragment heatMapFragment = new HeatMapFragment();
+            boolean isGroup = false;
+            HeatMapFragment heatMapFragment = HeatMapFragment.newInstance(isGroup);
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.heatmap_container, heatMapFragment);
             transaction.commit();

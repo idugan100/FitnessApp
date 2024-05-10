@@ -47,19 +47,32 @@ public class HeatMapFragment extends Fragment implements HeatMap.DataReadyCallba
     private GridLayout gridLayout;
     private HeatMap heatMap;
 
+    // Factory
+    public static HeatMapFragment newInstance(boolean isGroup) {
+        HeatMapFragment fragment = new HeatMapFragment();
+        Bundle args = new Bundle();
+        args.putBoolean("isGroup", isGroup);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_heat_map, container, false);
         gridLayout = view.findViewById(R.id.gridLayout2);
 
+        boolean isGroup = false;
+        if (getArguments() != null) {
+            isGroup = getArguments().getBoolean("isGroup", false);
+        }
+
         /**
          * Creates a new HeatMap instance and passes the fragment as the callback.
          * The HeatMap class will fetch the data and notify the fragement when it's ready
          * to be consumed.
          */
-        heatMap = new HeatMap(getContext(), this);
-
+        heatMap = new HeatMap(getContext(), this, isGroup);
         return view;
     }
 
