@@ -55,21 +55,28 @@ public class HeatMap {
     private static final int ROWS = 4;
     private static final int COLS = 7;
     private ArrayList<DailyTotal> totalList = new ArrayList<>();
+    boolean isGroup = false;
 
     /**
      * Constructor to create a new HeatMap object
      * @param context -> Context of the app
      * @param callback -> Callback to notifiy data is ready
      */
-    public HeatMap(Context context, DataReadyCallback callback) {
+    public HeatMap(Context context, DataReadyCallback callback, boolean isGroup) {
         this.context = context;
         this.callback = callback;
-        fetchData();
+        this.isGroup = isGroup;
+        fetchData(this.isGroup);
     }
 
     // Fetches data with Volley
-    private void fetchData() {
-        String url = "http://18.226.82.203:8080/activities/stats/" + AppUser.getInstance().getId();
+    private void fetchData(boolean isGroup) {
+        String url = "";
+        if (isGroup) {
+            url = "http://18.226.82.203:8080/activities/stats/all";
+        } else {
+            url = "http://18.226.82.203:8080/activities/stats/" + AppUser.getInstance().getId();
+        }
 
         /**
          * Found this Lambda syntax online. Basically just inline logic, thought it looked a little
