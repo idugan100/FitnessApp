@@ -1,75 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDarkBackground"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/colorPrimaryDarkBackground"
     tools:context=".UserHome">
 
     <Button
+        android:id="@+id/button"
         style="@style/AppButton"
-        android:layout_width="368dp"
-        android:layout_height="87dp"
+        android:layout_width="363dp"
+        android:layout_height="93dp"
+        android:gravity="center_horizontal|center_vertical"
         android:onClick="goToAllNotifications"
-        android:text="see notifications" />
+        android:text="see notifications"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <Button
-            style="@style/AppButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="goToNewActivity"
-            android:text="new activity +" />
-
-        <Button
-            style="@style/AppButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="goToAllActivities"
-            android:text="past activities" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="411dp"
-        android:layout_height="178dp"
-        android:layout_marginTop="20dp"
+        android:id="@+id/linearLayout2"
+        android:layout_width="390dp"
+        android:layout_height="150dp"
         android:background="@color/backgroundLight"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/heatmap_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             style="@style/StatsText"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="stat 1" />
+            android:text="stat 1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSelectHandleRight="?attr/actionModeBackground" />
 
         <TextView
             style="@style/StatsText"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="stat 2" />
-
-        <TextView
-            style="@style/StatsText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="stat 3" />
-
-        <TextView
-            style="@style/StatsText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="stat 4" />
     </LinearLayout>
@@ -78,32 +63,65 @@
         android:id="@+id/heatmap_container"
         android:layout_width="390dp"
         android:layout_height="242dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginRight="0dp"
-        android:background="@color/colorPrimaryDarkBackground" />
+        android:background="@color/colorPrimaryDarkBackground"
+        app:layout_constraintBottom_toTopOf="@+id/adminButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        style="@style/GeneralTextView"
+        android:id="@+id/adminButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text=" go to admin panel ->"
+        android:layout_marginBottom="8dp"
         android:onClick="goToAdminPanel"
-        android:textColor="@color/notificationRed"
+        android:text="Admin Panel"
         android:textAlignment="center"
-        android:id="@+id/adminButton"
-        />
+        android:textColor="@color/notificationRed"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        style="@style/GeneralTextView"
+        android:id="@+id/textView"
         android:layout_width="380dp"
-        android:layout_height="wrap_content"
+        android:layout_height="39dp"
         android:background="@color/colorPrimaryDark"
         android:padding="10dp"
         android:text="@string/app_name"
         android:textAlignment="center"
-        android:textColor="@color/textColorPrimary"/>
+        android:textColor="@color/textColorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/button2"
+        style="@style/AppButton"
+        android:layout_width="174dp"
+        android:layout_height="118dp"
+        android:layout_marginTop="4dp"
+        android:onClick="goToNewActivity"
+        android:text="new activity +"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Button
+        android:id="@+id/button3"
+        style="@style/AppButton"
+        android:layout_width="177dp"
+        android:layout_height="118dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:onClick="goToAllActivities"
+        android:text="past activities"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 
