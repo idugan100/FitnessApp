@@ -1,5 +1,6 @@
 package com.example.fitnessapp;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
 import com.android.volley.AuthFailureError;
@@ -14,6 +15,7 @@ import org.json.JSONObject;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -130,20 +132,34 @@ public class HeatMap {
 
     // Initializes heatmap grid with DateIntensity objects
     private void initializeHeatMap() {
+        // Plot the grid with dates from current date back 28 days
+        LocalDate startDate = LocalDate.now().minusDays(27);
         this.grid = new DateIntensity[ROWS][COLS];
-        int index = 0;
+        Map<LocalDate, DailyTotal> dateMap = new HashMap<>();
+
+        // Populate dateMap Map
+        for (DailyTotal total : totalList) {
+            LocalDate date = LocalDate.parse(total.day, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+            dateMap.put(date, total);
+        }
+
+        // Populate grid based on dateMap Map
         for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLS; j++) {
-                if (index >= totalList.size()) {
-                    grid[i][j] = new DateIntensity("", Intensity.NONE);
-                    index++;
+                // Need to access the right day in startDate for the 2d grid location
+                // i = 1 j = 1 gives grid[1][1] which would be the 9th day on the grid
+                // COLS = 7 for 7 days per week.
+                // i * COLS * j => 1 * 7 + 1 = 8
+                // startDate(8) is the 9th element of the array which = 9th day
+                LocalDate currentDate = startDate.plusDays(i * COLS + j);
+
+                if (dateMap.containsKey(currentDate)) {
+                    DailyTotal total = dateMap.get(currentDate);
+                    Intensity intensity = setIntensity(total.minutes);
+                    grid[i][j] = new DateIntensity(currentDate.toString(), intensity);
                     continue;
                 }
-                DailyTotal total = totalList.get(index);
-                String date = total.day;
-                Intensity intensity = setIntensity(total.minutes);
-                grid[i][j] = new DateIntensity(date, intensity);
-                index++;
+                grid[i][j] = new DateIntensity(currentDate.toString(), Intensity.NONE);
             }
         }
     }
