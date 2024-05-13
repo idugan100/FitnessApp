@@ -9,12 +9,17 @@ public class DateIntensity {
         this.i = i;
     }
 
-    public Intensity getIntensity () {
-        return i;
-    }
-
     @Override
     public String toString() {
         return "Date: " + date + ", Intensity: " + i;
     }
+
+    public Intensity getIntensity () {
+        return i;
+    }
+
+    public String getDate() {
+        return this.date;
+    }
+
 }
