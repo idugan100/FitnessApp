@@ -36,7 +36,7 @@
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="351dp"
-        android:layout_height="97dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@color/backgroundLight"
         android:orientation="horizontal"
@@ -47,16 +47,22 @@
         <TextView
             style="@style/StatsText"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:id="@+id/totaldays"
+            android:layout_height="wrap_content"
+            android:textSize="24dp"
             android:layout_weight="1"
+            android:textStyle="bold"
             android:text="stat 1"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textSelectHandleRight="?attr/actionModeBackground" />
 
         <TextView
             style="@style/StatsText"
+            android:id="@+id/totalmin"
+            android:textSize="24dp"
+            android:textStyle="bold"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="stat 4" />
     </LinearLayout>

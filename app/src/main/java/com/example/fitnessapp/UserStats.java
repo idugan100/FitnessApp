@@ -16,7 +16,7 @@ public class UserStats {
         return
                 "First Workout: "+ first+
                         "\nMost Recent Workout: "+last+
-                        "\nTotal Days Exercised: "+totalDays+
+                        "\nTotal Workouts: "+totalDays+
                         "\nTotal Minutes Exercised: "+totalMinutes+
                         "\n Percentage High Intensity: "+String.format("%.1f", pctHigh())+ "%" +
                         "\n Percentage Medium Intensity: "+String.format("%.1f", pctMed())+"%" +
